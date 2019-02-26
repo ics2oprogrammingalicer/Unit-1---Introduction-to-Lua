@@ -14,7 +14,7 @@ scrollSpeed = 3
 local backgroundImage = display.newImageRect("Images/background.png", 2048, 1536)
 
 -- character image with width and height
-local beetleship = display.newImageRect("Imagews/beetleship.png", 200, 200)
+local beetleship = display.newImageRect("Images/beetleship.png", 200, 200)
 
 -- set the image to be transparent
 beetleship.alpha = 0
@@ -25,3 +25,42 @@ beetleship.y = display.contentHeight/3
 
 -- function: MoveShip
 -- Imput: this function accepts an event listener
+-- output: none
+-- description: This function adds the scroll speed to the x-value of the ship
+local function MoveShip(event)
+	-- add the scroll speed to the x-value of the ship
+	beetleship.x =beetleship.x + scrollSpeed
+	-- change the transparency of the ship every time it moves so that it fades out
+	beetleship.alpha = beetleship.alpha + 0.01
+end 
+
+-- MoveShip will be called over and over again
+Runtime:addEventListener("enterFrame", MoveShip)
+
+
+-- global variables
+scrollSpeed = 5
+
+-- character image with width and height
+local octopus = display.newImageRect("Images/octopus.png", 200, 200)
+
+-- set the image to be transparent
+octopus.alpha = 0
+
+-- set the initial x and y position of beetleship
+octopus.x = 0
+octopus.y = display.contentHeight/1.7
+
+-- function: MoveShip
+-- Imput: this function accepts an event listener
+-- output: none
+-- description: This function adds the scroll speed to the x-value of the ship
+local function MoveShip(event)
+	-- add the scroll speed to the x-value of the ship
+	octopus.x = octopus.x + scrollSpeed
+	-- change the transparency of the ship every time it moves so that it fades out
+	octopus.alpha = octopus.alpha + 0.1
+end 
+
+-- MoveShip will be called over and over again
+Runtime:addEventListener("enterFrame", MoveShip)
