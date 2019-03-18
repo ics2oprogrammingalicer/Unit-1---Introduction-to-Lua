@@ -34,4 +34,22 @@ local function AskQuestion()
 
 	correctAnswer = randomNumber1 + randomNumber2
 
-	-- create question
+	-- create question in text object
+	questionObject.text = randomNumber1 .. " + " .. randomNumber2 .. " = "
+
+end
+
+local function HideCorrect()
+	correctObject.isVisible = false
+	AskQuestion()
+end
+
+local function NumericFeildListener( event )
+
+	-- User begins editing "numericFeild"
+	if ( event.phase == "began") then 
+
+		--clear the text feild
+		event.target.text = ""
+
+	elseif
