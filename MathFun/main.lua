@@ -1,4 +1,4 @@
--- Title: NumericTextFields
+-- Title: MathFun
 -- Name: Alice R
 -- Course: ICS2O
 -- This program asks the user to answer a random math question.
@@ -29,14 +29,23 @@ local correctAnswer
 -----------------------------------------------------------------------
 
 local function AskQuestion()
-	-- generate 2  random numbers beetween a max. and a min. number
-	randomNumber1 = math.random(0,10)
-	randomNumber2 = math.random(0,10)
+	-- generate a random number beetween 1 and 2.
+	randomOperator = math.random(1,2)
 
-	correctAnswer = randomNumber1 + randomNumber2
+	--generate 2 random numbers
+	randomNumber1 = math.random(0,4)
+	randomNumber2 = math.random(0,4)
 
-	-- create question in text object
-	questionObject.text = randomNumber1 .. " + " .. randomNumber2 .. " = "
+	-- if the random operator is 1, then do addition
+	if (randomOperator == 1) then
+
+		-- calculate the correct answer
+		correctAnswer = randomNumber1 + randomNumber2
+
+		-- create question in text object
+	    questionObject.text = randomNumber1 .. " + " .. randomNumber2 .. " = "
+    
+    -- 
 
 end
 
