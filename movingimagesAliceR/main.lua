@@ -23,6 +23,21 @@ beetleship.alpha = 0
 beetleship.x = 0
 beetleship.y = display.contentHeight/3
 
+-----------------------------------------------------------------------------------------
+-- SOUNDS
+-----------------------------------------------------------------------------------------
+
+-- background music
+local creativeminds = audio.loadSound( "Sounds/bensound-creativeminds.mp3" )
+local creativemindsSoundChannel
+ 
+creativemindsSoundChannel = audio.play(creativemindsSound)
+
+timer.performWithDelay(2000, HideCorrect)
+-----------------------------------------------------------------------------------------
+
+
+
 -- function: MoveShip
 -- Imput: this function accepts an event listener
 -- output: none
