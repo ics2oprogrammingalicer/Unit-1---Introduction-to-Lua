@@ -116,3 +116,4 @@ end
 -------------------------------------------------------------------------
 timer.performWithDelay( 0, firstBall)
 timer.performWithDelay( 500, secondBall)
+timer. performWithDelay(1000, thirdBall)
