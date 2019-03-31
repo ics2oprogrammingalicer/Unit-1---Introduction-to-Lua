@@ -180,7 +180,7 @@ end
 
 -- create the lives to display on the screen
 heart1 = display.newImageRect("Images/heart.png", 100, 100)
-heart1.x = display.contentWidth * 7 / 8
+heart1.x = display.contentWidth * 5 / 8
 heart1.y = display.contentHeight * 1 / 7
 
 heart2 = display.newImageRect("Images/heart.png", 100, 100)
@@ -188,12 +188,13 @@ heart2.x = display.contentWidth * 6 / 8
 heart2.y = display.contentHeight * 1 / 7
 
 heart3 = display.newImageRect("Images/heart.png", 100, 100)
-heart3.x = display.contentWidth * 5 / 8
+heart3.x = display.contentWidth * 7 / 8
 heart3.y = display.contentHeight * 1 / 7
 
-clockText = display.newText("", display.contentWidth/10, display.contentHeight/7, nil, 150)
+clockText = display.newText("" .. secondsLeft, display.contentWidth/10, display.contentHeight/7, nil, 150)
 clockText:setTextColor(255/255, 0/255, 8/255)
 
+-----------------------------------------------------------------------------
 -- displays a question and sets the colour
 questionObject = display.newText("", display.contentWidth/3, display.contentHeight/2, nil, 50)
 questionObject:setTextColor(255/255, 0/255, 8/255)
@@ -220,3 +221,4 @@ numericField:addEventListener( "userInput", NumericFieldListener )
 ----------------------------------------------------------------------------
 -- call the function to aske the question
 AskQuestion()
+StartTimer()
