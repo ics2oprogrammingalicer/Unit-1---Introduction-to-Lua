@@ -86,3 +86,20 @@ function Whacked( )
 	-- if touch phase just started
 	if (event.phase == "began") then
 		
+
+
+	end
+
+end
+
+------------------------------------------------------------------------
+-- EVENT LISTENERS
+------------------------------------------------------------------------
+-- I add the event listener to the moles so that if the mole is touched 
+-- the whacked function is called
+mole:addEventListener( "touch", whacked)
+
+------------------------------------------------------------------------
+-- STARTS THE GAME
+------------------------------------------------------------------------
+GameStart()
