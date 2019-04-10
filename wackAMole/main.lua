@@ -37,7 +37,7 @@ local mole = display.newImage( "Images/mole.png", 0, 0 )
     mole.isVisible = false
 
 -- create variable to keep track of score
-local score 
+local score = 0
 local scoreObject = display.newText("", display.contentWidth/5, display.contentHeight/3, nil, 50)
 scoreObject:setTextColor(0/255, 230/255, 38/255)
 
@@ -56,7 +56,7 @@ function PopUp( )
 	mole.isVisible = true
 
 	-- call hide after 500 milliseconds
-	timer.performWithDelay( 500, hide )
+	timer.performWithDelay( 500, Hide )
 end
 
 -- this function calls the popUp after 3 sceonds
@@ -65,29 +65,26 @@ function PopUpDelay( )
 end
 
 -- this function makes the  mole invisible and then calls the PopUpDelay function
-function Hide( )
-
+function Hide()
 	-- changing visibility
 	mole.isVisible = false
-
 	-- call PopUpDelay function
-	timer.performWithDelay( 0, PopUpDelay )
+	PopUpDelay()
 end
 
 -- this function starts the game
-function GameStart( )
+function GameStart()
 	PopUpDelay()
 end
 
 -- this function increments the score only if the mole is clicked. it then displays
 -- the new Score.
-function Whacked( )
+function Whacked(event)
 
 	-- if touch phase just started
 	if (event.phase == "began") then
-		
-
-
+		score = score + 1
+		scoreObject.text = "Score" .. " = " .. score
 	end
 
 end
@@ -97,7 +94,7 @@ end
 ------------------------------------------------------------------------
 -- I add the event listener to the moles so that if the mole is touched 
 -- the whacked function is called
-mole:addEventListener( "touch", whacked)
+mole:addEventListener( "touch", Whacked)
 
 ------------------------------------------------------------------------
 -- STARTS THE GAME
